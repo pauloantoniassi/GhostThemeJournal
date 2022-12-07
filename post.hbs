@@ -7,12 +7,10 @@
 
         <header class="gh-article-header gh-canvas">
             <span class="gh-article-meta">
-<!--                {{#primary_author}}By <a href="{{url}}">{{name}}</a>{{/primary_author}}-->
-<!--                {{#if primary_tag}}-->
-<!--                    in-->
-<!--                    <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>-->
-<!--                {{/if}}-->
-<!--                —-->
+                {{#if primary_tag}}
+                    <a class="gh-article-tag" href="{{primary_tag.url}}">{{primary_tag.name}}</a>
+                {{/if}}
+                —
                 <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time>
             </span>
 
@@ -35,7 +33,7 @@
             </div>
         {{/if}}
 
-        <footer class="gh-article-footer gh-canvas{{#if @site.comments_enabled}}{{#unless @member}} no-border{{/unless}}{{#unless access}} no-border{{/unless}}{{/if}}">
+        <footer class="gh-article-footer gh-canvas">
             <nav class="gh-navigation">
                 <div class="gh-navigation-previous">
                     {{#prev_post}}

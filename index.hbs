@@ -8,7 +8,8 @@
                     <a class="gh-card-link" href="{{url}}">
                         <header class="gh-card-header">
                             <div class="gh-article-meta">
-                                <span class="gh-card-date">Latest — <time datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
+                                <span class="gh-card-date">Latest — <time
+                                        datetime="{{date format="YYYY-MM-DD"}}">{{date}}</time></span>
                             </div>
                             <h2 class="gh-article-title gh-card-title">{{title}}</h2>
                         </header>
@@ -17,9 +18,6 @@
 
                         <footer class="gh-card-meta">
                             <span class="gh-card-duration">{{reading_time}}</span>
-                            {{#if @site.comments_enabled}}
-                                {{comment_count class="gh-card-comments"}}
-                            {{/if}}
                             {{^has visibility="public"}}
                                 {{> icons/star}}
                             {{/has}}
@@ -50,11 +48,12 @@
                 {{/match}}
 
                 <button class="gh-loadmore gh-btn">Load more posts</button>
+                {{pagination}}
             </section>
 
             <aside class="gh-sidebar">
                 <section class="gh-section">
-                    <h2 class="gh-section-title">About</h2>
+                    <h2 class="gh-section-title">About me</h2>
 
                     <div class="gh-about">
                         {{#if @site.icon}}
@@ -69,29 +68,6 @@
                             {{/if}}
                         </section>
                     </div>
-
-                    {{#if @site.members_enabled}}
-                        {{^if @member.paid}}
-                            <div class="gh-signup">
-                                {{^if @member}}
-                                    <p class="gh-signup-description">Sign up now to get access to the library of members-only issues.</p>
-
-                                    <a class="gh-subscribe-input" href="#/portal/signup" data-portal="signup">
-                                        <div class="gh-subscribe-input-text">
-                                            {{> icons/email}}
-                                            jamie@example.com
-                                        </div>
-                                        <div class="gh-subscribe-input-btn">Subscribe</div>
-                                    </a>
-                                {{else}}
-                                    {{#if @setting.paid_members_enabled}}
-                                        <p class="gh-signup-description">Upgrade to a paid account to get full access.</p>
-                                        <a class="gh-signup-btn gh-btn gh-primary-btn" href="#/portal/account/plans" data-portal="account/plans">Upgrade now</a>
-                                    {{/if}}
-                                {{/if}}
-                            </div>
-                        {{/if}}
-                    {{/if}}
                 </section>
 
                 {{#get "posts" filter="featured:true" limit="all" as |featured|}}

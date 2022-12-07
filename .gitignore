@@ -1,1 +1,4 @@
 /assets/built/
+/node_modules/
+/.idea/
+/dist
