@@ -15,7 +15,7 @@ const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 
 function serve(done) {
-    livereload.listen();
+    livereload.listen({ port: 9999 });
     done();
 }
 
@@ -26,7 +26,7 @@ function handleError(done) {
         }
         return done(err);
     };
-};
+}
 
 function hbs(done) {
     pump([
