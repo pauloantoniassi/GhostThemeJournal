@@ -452,8 +452,7 @@
 }
 
 .gh-author-image {
-    width: 80px;
-    height: 80px;
+    max-width: 120px;
     margin-bottom: 2.4rem;
     border-radius: 50%;
 }
