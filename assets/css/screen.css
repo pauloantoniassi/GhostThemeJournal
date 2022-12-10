@@ -334,6 +334,17 @@
     grid-column: wide-start / wide-end;
 }
 
+.gh-article-image {
+    place-self: center;
+    display: flex;
+}
+
+.gh-article-image img {
+    width: auto;
+    max-height: 450px;
+    max-width: 100%;
+}
+
 .gh-article-meta {
     margin-bottom: 2rem;
     font-size: 1.2rem;
@@ -452,7 +463,8 @@
 }
 
 .gh-author-image {
-    max-width: 120px;
+    width: 120px;
+    height: 120px;
     margin-bottom: 2.4rem;
     border-radius: 50%;
 }
